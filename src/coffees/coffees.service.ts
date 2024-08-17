@@ -1,26 +1,51 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateCoffeeDto } from './dto/create-coffee.dto';
 import { UpdateCoffeeDto } from './dto/update-coffee.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { Coffee } from './entities/coffee.entity';
 
 @Injectable()
 export class CoffeesService {
+  constructor(
+    @InjectModel(Coffee.name) private readonly coffeeModel: Model<Coffee>,
+  ) {}
   create(createCoffeeDto: CreateCoffeeDto) {
-    return 'This action adds a new coffee';
+    const coffee = new this.coffeeModel(createCoffeeDto);
+    return coffee.save();
   }
 
-  findAll() {
-    return `This action returns all coffees`;
+  async findAll() {
+    return await this.coffeeModel.find().exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} coffee`;
+  async findOne(id: number) {
+    const coffee = await this.coffeeModel.findOne({ _id: id }).exec();
+    if (!coffee) {
+      throw new NotFoundException(`Coffee #${id} not found`);
+    }
+    return coffee;
   }
 
-  update(id: number, updateCoffeeDto: UpdateCoffeeDto) {
-    return `This action updates a #${id} coffee`;
+  async update(id: number, updateCoffeeDto: UpdateCoffeeDto) {
+    const existingCoffee = await this.coffeeModel
+      .findOneAndUpdate(
+        { _id: id },
+        {
+          $set: updateCoffeeDto,
+        },
+        {
+          new: true,
+        },
+      )
+      .exec();
+    if (!existingCoffee) {
+      throw new NotFoundException(`Coffee #${id} not found`);
+    }
+    return existingCoffee;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} coffee`;
+  async remove(id: number) {
+    return await this.coffeeModel.deleteOne({ _id: id }).exec();
   }
 }
