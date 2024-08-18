@@ -11,6 +11,8 @@ import jwtConfig from './config/jwt.config';
 import { BcryptService } from './hashing/bcrypt.service';
 import { HashingService } from './hashing/hashing.service';
 import { AccessTokenGuard } from './authentication/guards/access-token.guard';
+import { RefreshTokenIdsStorage } from './authentication/refresh-token-ids.storage';
+import { RedisModule } from 'src/redis/redis.module';
 
 @Module({
   imports: [
@@ -33,6 +35,7 @@ import { AccessTokenGuard } from './authentication/guards/access-token.guard';
       useClass: AuthenticationGuard,
     },
     AccessTokenGuard,
+    RefreshTokenIdsStorage,
     AuthenticationService,
   ],
   controllers: [AuthenticationController],
