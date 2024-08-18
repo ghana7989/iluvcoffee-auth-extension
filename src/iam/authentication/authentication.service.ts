@@ -29,7 +29,7 @@ export class AuthenticationService {
       user.email = email;
       user.password = await this.hashingService.hash(password);
       await this.userModel.create(user);
-      return user;
+      return this.signIn({ email, password });
     } catch (err) {
       // If the error is related to a duplicate key (like email), throw a ConflictException
       if (err.code === 11000) {
