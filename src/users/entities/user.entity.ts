@@ -13,10 +13,15 @@ import { HydratedDocument } from 'mongoose';
   },
 })
 export class User {
-  @Prop()
+  @Prop({
+    unique: true,
+    required: true,
+  })
   email: string;
 
-  @Prop()
+  @Prop({
+    required: true,
+  })
   password: string;
 }
 

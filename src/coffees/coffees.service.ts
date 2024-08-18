@@ -1,8 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { CreateCoffeeDto } from './dto/create-coffee.dto';
-import { UpdateCoffeeDto } from './dto/update-coffee.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import { CreateCoffeeDto } from './dto/create-coffee.dto';
+import { UpdateCoffeeDto } from './dto/update-coffee.dto';
 import { Coffee } from './entities/coffee.entity';
 
 @Injectable()
@@ -19,7 +19,7 @@ export class CoffeesService {
     return await this.coffeeModel.find().exec();
   }
 
-  async findOne(id: number) {
+  async findOne(id: string) {
     const coffee = await this.coffeeModel.findOne({ _id: id }).exec();
     if (!coffee) {
       throw new NotFoundException(`Coffee #${id} not found`);
@@ -45,7 +45,11 @@ export class CoffeesService {
     return existingCoffee;
   }
 
-  async remove(id: number) {
-    return await this.coffeeModel.deleteOne({ _id: id }).exec();
+  async remove(id: string): Promise<Coffee | null> {
+    const coffee = await this.findOne(id);
+    if (!coffee) {
+      throw new NotFoundException(`Coffee #${id} not found`);
+    }
+    return coffee.deleteOne();
   }
 }
