@@ -70,6 +70,7 @@ export class AuthenticationService {
         this.jwtConfiguration.accessTokenExpiresIn,
         {
           email: user.email,
+          role: user.role,
         },
       ),
       this.signToken<RefreshTokenPayload>(
