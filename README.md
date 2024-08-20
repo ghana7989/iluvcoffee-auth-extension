@@ -1,4 +1,5 @@
-# Project Name: Auth Extension
+
+# Authentication and Authorization in Nest.JS
 
 ## Description
 
@@ -8,10 +9,9 @@ This project is a NestJS extension that provides authentication functionality fo
 
 To install the Auth Extension, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/auth-extension.git`
+1. Clone the repository: `git clone https://github.com/ghana7989/iluvcoffee-auth-extension`
 2. Navigate to the project directory: `cd auth-extension`
 3. Install dependencies: `npm install`
-
 
 ## Contributing
 
