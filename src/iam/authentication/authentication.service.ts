@@ -71,6 +71,7 @@ export class AuthenticationService {
         {
           email: user.email,
           role: user.role,
+          permissions: user.permissions,
         },
       ),
       this.signToken<RefreshTokenPayload>(
