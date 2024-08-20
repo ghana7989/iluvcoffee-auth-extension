@@ -1,6 +1,10 @@
 
 # Authentication and Authorization in Nest.JS
 
+
+![Screenshot 2024-08-20 at 9 44 31 PM](https://github.com/user-attachments/assets/a5eb0b22-6aff-40e9-8cb3-0fe6bc1653b8)
+to see the graph run `npm run orakul` after the installation steps
+
 ## Description
 
 This project is a NestJS extension that provides authentication functionality for web applications. It includes features such as user registration, login, and token-based authentication.
