@@ -1,11 +1,13 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import mongoose, { HydratedDocument } from 'mongoose';
 import { Role } from '../enums/role.enum';
 import {
   Permission,
   PermissionType,
 } from 'src/iam/authorization/permission.type';
 import { Permissions } from 'src/iam/authorization/decorators/permissions.decorator';
+import { ApiKey } from '../api-keys/entities/api-key.entity';
+export type UserDocument = HydratedDocument<User>;
 
 @Schema({
   timestamps: true,
@@ -32,6 +34,7 @@ export class User {
 
   @Prop({
     default: Role.Regular,
+    type: String,
   })
   role: Role;
 
@@ -41,8 +44,19 @@ export class User {
     enum: Permission,
   })
   permissions: PermissionType[];
+
+  @Prop({
+    type: [mongoose.Schema.Types.ObjectId],
+    default: [],
+    ref: ApiKey.name,
+    select: true,
+  })
+  apiKeys: ApiKey[];
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
 
-export type UserDocument = HydratedDocument<User>;
+UserSchema.pre<UserDocument>('findOne', function (next) {
+  this.populate('apiKeys');
+  next();
+});

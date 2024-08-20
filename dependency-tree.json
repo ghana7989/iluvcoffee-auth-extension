@@ -1,0 +1,1020 @@
+{
+  ".": {
+    "id": ".",
+    "components": {
+      "/Users/pavan/Learning/nestjs/auth-extension/src/main.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/main.ts",
+        "name": "main",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/app.module.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/filters/mongo-exception.filter.ts"
+        ],
+        "exports": []
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/filters/mongo-exception.filter.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/filters/mongo-exception.filter.ts",
+        "name": "mongo-exception.filter",
+        "imports": [],
+        "exports": [
+          {
+            "id": "MongoExceptionFilter",
+            "apiPath": "",
+            "name": "MongoExceptionFilter",
+            "tags": [],
+            "members": [
+              {
+                "id": "MongoExceptionFilter.catch",
+                "name": "catch",
+                "method": "",
+                "apiPath": ""
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/app.module.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/app.module.ts",
+        "name": "app.module",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/app.controller.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/app.service.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/coffees.module.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/users.module.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/iam.module.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/redis/redis.module.ts"
+        ],
+        "exports": [
+          {
+            "id": "AppModule",
+            "apiPath": "",
+            "name": "AppModule",
+            "tags": [
+              "module"
+            ],
+            "members": []
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/redis/redis.module.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/redis/redis.module.ts",
+        "name": "redis.module",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/redis/redis.service.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/redis/redis.constants.ts"
+        ],
+        "exports": [
+          {
+            "id": "RedisModule",
+            "apiPath": "",
+            "name": "RedisModule",
+            "tags": [
+              "module"
+            ],
+            "members": []
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/redis/redis.constants.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/redis/redis.constants.ts",
+        "name": "redis.constants",
+        "imports": [],
+        "exports": []
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/redis/redis.service.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/redis/redis.service.ts",
+        "name": "redis.service",
+        "imports": [],
+        "exports": [
+          {
+            "id": "RedisService",
+            "apiPath": "",
+            "name": "RedisService",
+            "tags": [],
+            "members": [
+              {
+                "id": "RedisService.getClient",
+                "name": "getClient",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "RedisService.onApplicationShutdown",
+                "name": "onApplicationShutdown",
+                "method": "",
+                "apiPath": ""
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/iam.module.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/iam.module.ts",
+        "name": "iam.module",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/api-keys/entities/api-key.entity.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/entities/user.entity.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/api-keys.service.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/authentication.controller.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/authentication.service.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/guards/access-token.guard.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/guards/authentication.guard.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/refresh-token-ids.storage.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authorization/guards/roles.guard.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/config/jwt.config.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/hashing/bcrypt.service.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/hashing/hashing.service.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/guards/api-key.guard.ts"
+        ],
+        "exports": [
+          {
+            "id": "IamModule",
+            "apiPath": "",
+            "name": "IamModule",
+            "tags": [
+              "module"
+            ],
+            "members": []
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/guards/api-key.guard.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/guards/api-key.guard.ts",
+        "name": "api-key.guard",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/api-keys.service.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/api-keys/entities/api-key.entity.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/iam.constants.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/interfaces/active-user-data.interface.ts"
+        ],
+        "exports": [
+          {
+            "id": "ApiKeyGuard",
+            "apiPath": "",
+            "name": "ApiKeyGuard",
+            "tags": [],
+            "members": [
+              {
+                "id": "ApiKeyGuard.canActivate",
+                "name": "canActivate",
+                "method": "",
+                "apiPath": ""
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/interfaces/active-user-data.interface.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/interfaces/active-user-data.interface.ts",
+        "name": "active-user-data.interface",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/enums/role.enum.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authorization/permission.type.ts"
+        ],
+        "exports": []
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authorization/permission.type.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authorization/permission.type.ts",
+        "name": "permission.type",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/coffees.permission.ts"
+        ],
+        "exports": []
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/coffees.permission.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/coffees.permission.ts",
+        "name": "coffees.permission",
+        "imports": [],
+        "exports": []
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/users/enums/role.enum.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/users/enums/role.enum.ts",
+        "name": "role.enum",
+        "imports": [],
+        "exports": []
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/iam.constants.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/iam.constants.ts",
+        "name": "iam.constants",
+        "imports": [],
+        "exports": []
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/users/api-keys/entities/api-key.entity.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/users/api-keys/entities/api-key.entity.ts",
+        "name": "api-key.entity",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/entities/user.entity.ts"
+        ],
+        "exports": [
+          {
+            "id": "ApiKey",
+            "apiPath": "",
+            "name": "ApiKey",
+            "tags": [
+              "db"
+            ],
+            "members": []
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/users/entities/user.entity.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/users/entities/user.entity.ts",
+        "name": "user.entity",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/enums/role.enum.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authorization/permission.type.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authorization/decorators/permissions.decorator.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/api-keys/entities/api-key.entity.ts"
+        ],
+        "exports": [
+          {
+            "id": "User",
+            "apiPath": "",
+            "name": "User",
+            "tags": [
+              "db"
+            ],
+            "members": []
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authorization/decorators/permissions.decorator.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authorization/decorators/permissions.decorator.ts",
+        "name": "permissions.decorator",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authorization/permission.type.ts"
+        ],
+        "exports": []
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/api-keys.service.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/api-keys.service.ts",
+        "name": "api-keys.service",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/interfaces/generated-api-key.interface.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/hashing/hashing.service.ts"
+        ],
+        "exports": [
+          {
+            "id": "ApiKeysService",
+            "apiPath": "",
+            "name": "ApiKeysService",
+            "tags": [],
+            "members": [
+              {
+                "id": "ApiKeysService.createAndHash",
+                "name": "createAndHash",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "ApiKeysService.validate",
+                "name": "validate",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "ApiKeysService.extractIdFromApiKey",
+                "name": "extractIdFromApiKey",
+                "method": "",
+                "apiPath": ""
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/hashing/hashing.service.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/hashing/hashing.service.ts",
+        "name": "hashing.service",
+        "imports": [],
+        "exports": [
+          {
+            "id": "HashingService",
+            "apiPath": "",
+            "name": "HashingService",
+            "tags": [],
+            "members": [
+              {
+                "id": "HashingService.hash",
+                "name": "hash",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "HashingService.compare",
+                "name": "compare",
+                "method": "",
+                "apiPath": ""
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/interfaces/generated-api-key.interface.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/interfaces/generated-api-key.interface.ts",
+        "name": "generated-api-key.interface",
+        "imports": [],
+        "exports": []
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/hashing/bcrypt.service.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/hashing/bcrypt.service.ts",
+        "name": "bcrypt.service",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/hashing/hashing.service.ts"
+        ],
+        "exports": [
+          {
+            "id": "BcryptService",
+            "apiPath": "",
+            "name": "BcryptService",
+            "tags": [],
+            "members": [
+              {
+                "id": "BcryptService.hash",
+                "name": "hash",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "BcryptService.compare",
+                "name": "compare",
+                "method": "",
+                "apiPath": ""
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/config/jwt.config.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/config/jwt.config.ts",
+        "name": "jwt.config",
+        "imports": [],
+        "exports": []
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authorization/guards/roles.guard.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authorization/guards/roles.guard.ts",
+        "name": "roles.guard",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/iam.constants.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/interfaces/active-user-data.interface.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/enums/role.enum.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authorization/decorators/roles.decorator.ts"
+        ],
+        "exports": [
+          {
+            "id": "RolesGuard",
+            "apiPath": "",
+            "name": "RolesGuard",
+            "tags": [],
+            "members": [
+              {
+                "id": "RolesGuard.canActivate",
+                "name": "canActivate",
+                "method": "",
+                "apiPath": ""
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authorization/decorators/roles.decorator.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authorization/decorators/roles.decorator.ts",
+        "name": "roles.decorator",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/enums/role.enum.ts"
+        ],
+        "exports": []
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/refresh-token-ids.storage.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/refresh-token-ids.storage.ts",
+        "name": "refresh-token-ids.storage",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/common/error/invalidate-refresh-token.error.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/redis/redis.constants.ts"
+        ],
+        "exports": [
+          {
+            "id": "RefreshTokenIdsStorage",
+            "apiPath": "",
+            "name": "RefreshTokenIdsStorage",
+            "tags": [],
+            "members": [
+              {
+                "id": "RefreshTokenIdsStorage.insert",
+                "name": "insert",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "RefreshTokenIdsStorage.validate",
+                "name": "validate",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "RefreshTokenIdsStorage.invalidate",
+                "name": "invalidate",
+                "method": "",
+                "apiPath": ""
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/common/error/invalidate-refresh-token.error.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/common/error/invalidate-refresh-token.error.ts",
+        "name": "invalidate-refresh-token.error",
+        "imports": [],
+        "exports": [
+          {
+            "id": "InvalidateRefreshTokenError",
+            "apiPath": "",
+            "name": "InvalidateRefreshTokenError",
+            "tags": [],
+            "members": []
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/guards/authentication.guard.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/guards/authentication.guard.ts",
+        "name": "authentication.guard",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/enums/auth-type.enum.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/decorators/auth.decorator.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/guards/access-token.guard.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/guards/api-key.guard.ts"
+        ],
+        "exports": [
+          {
+            "id": "AuthenticationGuard",
+            "apiPath": "",
+            "name": "AuthenticationGuard",
+            "tags": [],
+            "members": [
+              {
+                "id": "AuthenticationGuard.canActivate",
+                "name": "canActivate",
+                "method": "",
+                "apiPath": ""
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/guards/access-token.guard.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/guards/access-token.guard.ts",
+        "name": "access-token.guard",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/config/jwt.config.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/iam.constants.ts"
+        ],
+        "exports": [
+          {
+            "id": "AccessTokenGuard",
+            "apiPath": "",
+            "name": "AccessTokenGuard",
+            "tags": [],
+            "members": [
+              {
+                "id": "AccessTokenGuard.canActivate",
+                "name": "canActivate",
+                "method": "",
+                "apiPath": ""
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/decorators/auth.decorator.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/decorators/auth.decorator.ts",
+        "name": "auth.decorator",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/enums/auth-type.enum.ts"
+        ],
+        "exports": []
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/enums/auth-type.enum.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/enums/auth-type.enum.ts",
+        "name": "auth-type.enum",
+        "imports": [],
+        "exports": []
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/authentication.service.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/authentication.service.ts",
+        "name": "authentication.service",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/entities/user.entity.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/config/jwt.config.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/hashing/hashing.service.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/interfaces/active-user-data.interface.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/dto/refresh-token.dto.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/dto/sign-in.dto.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/dto/sign-up.dto.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/refresh-token-ids.storage.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/interfaces/refresh-token-payload.interface.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/common/error/invalidate-refresh-token.error.ts"
+        ],
+        "exports": [
+          {
+            "id": "AuthenticationService",
+            "apiPath": "",
+            "name": "AuthenticationService",
+            "tags": [],
+            "members": [
+              {
+                "id": "AuthenticationService.signUp",
+                "name": "signUp",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "AuthenticationService.signIn",
+                "name": "signIn",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "AuthenticationService.generateTokens",
+                "name": "generateTokens",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "AuthenticationService.refreshTokens",
+                "name": "refreshTokens",
+                "method": "",
+                "apiPath": ""
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/interfaces/refresh-token-payload.interface.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/interfaces/refresh-token-payload.interface.ts",
+        "name": "refresh-token-payload.interface",
+        "imports": [],
+        "exports": []
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/dto/sign-up.dto.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/dto/sign-up.dto.ts",
+        "name": "sign-up.dto",
+        "imports": [],
+        "exports": [
+          {
+            "id": "SignUpDto",
+            "apiPath": "",
+            "name": "SignUpDto",
+            "tags": [],
+            "members": []
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/dto/sign-in.dto.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/dto/sign-in.dto.ts",
+        "name": "sign-in.dto",
+        "imports": [],
+        "exports": [
+          {
+            "id": "SignInDto",
+            "apiPath": "",
+            "name": "SignInDto",
+            "tags": [],
+            "members": []
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/dto/refresh-token.dto.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/dto/refresh-token.dto.ts",
+        "name": "refresh-token.dto",
+        "imports": [],
+        "exports": [
+          {
+            "id": "RefreshTokenDto",
+            "apiPath": "",
+            "name": "RefreshTokenDto",
+            "tags": [],
+            "members": []
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/authentication.controller.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/authentication.controller.ts",
+        "name": "authentication.controller",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/authentication.service.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/dto/sign-in.dto.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/dto/sign-up.dto.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/decorators/auth.decorator.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/enums/auth-type.enum.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/dto/refresh-token.dto.ts"
+        ],
+        "exports": [
+          {
+            "id": "AuthenticationController",
+            "apiPath": "/authentication",
+            "name": "AuthenticationController",
+            "tags": [
+              "controller"
+            ],
+            "members": [
+              {
+                "id": "AuthenticationController.signUp",
+                "name": "signUp",
+                "apiPath": "/authentication/sign-up",
+                "method": "POST"
+              },
+              {
+                "id": "AuthenticationController.signIn",
+                "name": "signIn",
+                "apiPath": "/authentication/sign-in",
+                "method": "POST"
+              },
+              {
+                "id": "AuthenticationController.refreshTokens",
+                "name": "refreshTokens",
+                "apiPath": "/authentication/refresh-tokens",
+                "method": "POST"
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/users/users.module.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/users/users.module.ts",
+        "name": "users.module",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/users.service.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/users.controller.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/entities/user.entity.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/api-keys/entities/api-key.entity.ts"
+        ],
+        "exports": [
+          {
+            "id": "UsersModule",
+            "apiPath": "",
+            "name": "UsersModule",
+            "tags": [
+              "module"
+            ],
+            "members": []
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/users/users.controller.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/users/users.controller.ts",
+        "name": "users.controller",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/users.service.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/dto/create-user.dto.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/dto/update-user.dto.ts"
+        ],
+        "exports": [
+          {
+            "id": "UsersController",
+            "apiPath": "/users",
+            "name": "UsersController",
+            "tags": [
+              "controller"
+            ],
+            "members": [
+              {
+                "id": "UsersController.create",
+                "name": "create",
+                "apiPath": "/users/",
+                "method": "POST"
+              },
+              {
+                "id": "UsersController.findAll",
+                "name": "findAll",
+                "apiPath": "/users/",
+                "method": "GET"
+              },
+              {
+                "id": "UsersController.findOne",
+                "name": "findOne",
+                "apiPath": "/users/:id",
+                "method": "GET"
+              },
+              {
+                "id": "UsersController.update",
+                "name": "update",
+                "apiPath": "/users/:id",
+                "method": "PATCH"
+              },
+              {
+                "id": "UsersController.remove",
+                "name": "remove",
+                "apiPath": "/users/:id",
+                "method": "DELETE"
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/users/dto/update-user.dto.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/users/dto/update-user.dto.ts",
+        "name": "update-user.dto",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/dto/create-user.dto.ts"
+        ],
+        "exports": [
+          {
+            "id": "UpdateUserDto",
+            "apiPath": "",
+            "name": "UpdateUserDto",
+            "tags": [],
+            "members": []
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/users/dto/create-user.dto.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/users/dto/create-user.dto.ts",
+        "name": "create-user.dto",
+        "imports": [],
+        "exports": [
+          {
+            "id": "CreateUserDto",
+            "apiPath": "",
+            "name": "CreateUserDto",
+            "tags": [],
+            "members": []
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/users/users.service.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/users/users.service.ts",
+        "name": "users.service",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/dto/create-user.dto.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/dto/update-user.dto.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/entities/user.entity.ts"
+        ],
+        "exports": [
+          {
+            "id": "UsersService",
+            "apiPath": "",
+            "name": "UsersService",
+            "tags": [],
+            "members": [
+              {
+                "id": "UsersService.create",
+                "name": "create",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "UsersService.findAll",
+                "name": "findAll",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "UsersService.findOne",
+                "name": "findOne",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "UsersService.update",
+                "name": "update",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "UsersService.remove",
+                "name": "remove",
+                "method": "",
+                "apiPath": ""
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/coffees.module.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/coffees.module.ts",
+        "name": "coffees.module",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/coffees.service.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/coffees.controller.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/entities/coffee.entity.ts"
+        ],
+        "exports": [
+          {
+            "id": "CoffeesModule",
+            "apiPath": "",
+            "name": "CoffeesModule",
+            "tags": [
+              "module"
+            ],
+            "members": []
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/entities/coffee.entity.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/entities/coffee.entity.ts",
+        "name": "coffee.entity",
+        "imports": [],
+        "exports": [
+          {
+            "id": "Coffee",
+            "apiPath": "",
+            "name": "Coffee",
+            "tags": [
+              "db"
+            ],
+            "members": []
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/coffees.controller.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/coffees.controller.ts",
+        "name": "coffees.controller",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/coffees.service.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/dto/create-coffee.dto.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/dto/update-coffee.dto.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/decorators/active-user.decorator.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/interfaces/active-user-data.interface.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authorization/decorators/roles.decorator.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/users/enums/role.enum.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/authentication/decorators/auth.decorator.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/enums/auth-type.enum.ts"
+        ],
+        "exports": [
+          {
+            "id": "CoffeesController",
+            "apiPath": "/coffees",
+            "name": "CoffeesController",
+            "tags": [
+              "controller"
+            ],
+            "members": [
+              {
+                "id": "CoffeesController.create",
+                "name": "create",
+                "apiPath": "/coffees/",
+                "method": "POST"
+              },
+              {
+                "id": "CoffeesController.findAll",
+                "name": "findAll",
+                "apiPath": "/coffees/",
+                "method": "GET"
+              },
+              {
+                "id": "CoffeesController.findOne",
+                "name": "findOne",
+                "apiPath": "/coffees/:id",
+                "method": "GET"
+              },
+              {
+                "id": "CoffeesController.update",
+                "name": "update",
+                "apiPath": "/coffees/:id",
+                "method": "PATCH"
+              },
+              {
+                "id": "CoffeesController.remove",
+                "name": "remove",
+                "apiPath": "/coffees/:id",
+                "method": "DELETE"
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/iam/decorators/active-user.decorator.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/iam/decorators/active-user.decorator.ts",
+        "name": "active-user.decorator",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/iam.constants.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/iam/interfaces/active-user-data.interface.ts"
+        ],
+        "exports": []
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/dto/update-coffee.dto.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/dto/update-coffee.dto.ts",
+        "name": "update-coffee.dto",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/dto/create-coffee.dto.ts"
+        ],
+        "exports": [
+          {
+            "id": "UpdateCoffeeDto",
+            "apiPath": "",
+            "name": "UpdateCoffeeDto",
+            "tags": [],
+            "members": []
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/dto/create-coffee.dto.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/dto/create-coffee.dto.ts",
+        "name": "create-coffee.dto",
+        "imports": [],
+        "exports": [
+          {
+            "id": "CreateCoffeeDto",
+            "apiPath": "",
+            "name": "CreateCoffeeDto",
+            "tags": [],
+            "members": []
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/coffees.service.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/coffees.service.ts",
+        "name": "coffees.service",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/dto/create-coffee.dto.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/dto/update-coffee.dto.ts",
+          "/Users/pavan/Learning/nestjs/auth-extension/src/coffees/entities/coffee.entity.ts"
+        ],
+        "exports": [
+          {
+            "id": "CoffeesService",
+            "apiPath": "",
+            "name": "CoffeesService",
+            "tags": [],
+            "members": [
+              {
+                "id": "CoffeesService.create",
+                "name": "create",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "CoffeesService.findAll",
+                "name": "findAll",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "CoffeesService.findOne",
+                "name": "findOne",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "CoffeesService.update",
+                "name": "update",
+                "method": "",
+                "apiPath": ""
+              },
+              {
+                "id": "CoffeesService.remove",
+                "name": "remove",
+                "method": "",
+                "apiPath": ""
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/app.service.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/app.service.ts",
+        "name": "app.service",
+        "imports": [],
+        "exports": [
+          {
+            "id": "AppService",
+            "apiPath": "",
+            "name": "AppService",
+            "tags": [],
+            "members": [
+              {
+                "id": "AppService.getHello",
+                "name": "getHello",
+                "method": "",
+                "apiPath": ""
+              }
+            ]
+          }
+        ]
+      },
+      "/Users/pavan/Learning/nestjs/auth-extension/src/app.controller.ts": {
+        "id": "/Users/pavan/Learning/nestjs/auth-extension/src/app.controller.ts",
+        "name": "app.controller",
+        "imports": [
+          "/Users/pavan/Learning/nestjs/auth-extension/src/app.service.ts"
+        ],
+        "exports": [
+          {
+            "id": "AppController",
+            "apiPath": "/",
+            "name": "AppController",
+            "tags": [
+              "controller"
+            ],
+            "members": [
+              {
+                "id": "AppController.getHello",
+                "name": "getHello",
+                "apiPath": "//",
+                "method": "GET"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

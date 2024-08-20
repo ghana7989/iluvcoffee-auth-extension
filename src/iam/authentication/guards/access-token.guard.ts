@@ -22,6 +22,7 @@ export class AccessTokenGuard implements CanActivate {
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const request = context.switchToHttp().getRequest<Request>();
     const token = this.extractTokenFromRequest(request);
+    if (!token) return false;
     try {
       const payload = await this.jwtService.verifyAsync(
         token,
@@ -35,10 +36,10 @@ export class AccessTokenGuard implements CanActivate {
   }
 
   private extractTokenFromRequest(request: Request) {
-    const token = request.headers.authorization?.replace('Bearer ', '');
+    const [type, token] = request.headers.authorization?.split(' ') || [];
     if (!token) {
       throw new UnauthorizedException('No Authorization headers found');
     }
-    return token;
+    return token && type === 'Bearer' ? token : undefined;
   }
 }
